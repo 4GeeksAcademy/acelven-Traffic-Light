@@ -2,28 +2,33 @@ import React, { useState } from "react";
 
 
 
+  function handleClick(event) {
+    
+    event.currentTarget.classList.toggle('selected');
+    
+  }
 
 
 function Home() {
-  const [litPos, setLitPos] = useState(-1);
-
+  const [] = useState(null);
+{handleClick}
   return (
     <div className="App">
       <div id="traffic-light">
         <button
           id="top"
-          style={{ backgroundColor: litPos === 0 ? 'red' : 'white' }}
-          onClick={() => setLitPos(litPos === 0 ? -1 : 0)}
+          style={{ backgroundColor:'red' }}
+          onClick={handleClick}
         />
         <button
           id="middle"
-          style={{ backgroundColor: litPos === 1 ? 'yellow' : 'white' }}
-          onClick={() => setLitPos(litPos === 1 ? -1 : 1)}
+          style={{ backgroundColor: 'yellow' }}
+          onClick={handleClick}
         />
         <button
           id="bottom"
-          style={{ backgroundColor: litPos === 2 ? 'green' : 'white' }}
-          onClick={() => setLitPos(litPos === 2 ? -1 : 2)}
+          style={{ backgroundColor: 'green' }}
+          onClick={handleClick}
         />
       </div>
     </div>
