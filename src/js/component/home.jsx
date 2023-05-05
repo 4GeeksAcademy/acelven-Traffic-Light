@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 
-
-
   function handleClick(event) {
     
-    event.currentTarget.classList.toggle('selected');
-    
+    event.currentTarget.classList.toggle('selected'); 
+    event.currentTarget.nextSibling.classList.remove("selected")
+    event.currentTarget.nextSibling.nextSibling.classList.remove("selected")
   }
-
+  function handleClick2(event) {
+    
+    event.currentTarget.classList.toggle('selected');
+    event.currentTarget.previousSibling.classList.remove("selected")
+    event.currentTarget.nextSibling.classList.remove("selected")
+  }
+  function handleClick3(event) {
+    
+    event.currentTarget.classList.toggle('selected');
+    event.currentTarget.previousSibling.classList.remove('selected');
+    event.currentTarget.previousSibling.previousSibling.classList.remove('selected')
+  }
 
 function Home() {
   const [] = useState(null);
-{handleClick}
+
   return (
     <div className="App">
       <div id="traffic-light">
@@ -23,12 +33,12 @@ function Home() {
         <button
           id="middle"
           style={{ backgroundColor: 'yellow' }}
-          onClick={handleClick}
+          onClick={handleClick2}
         />
         <button
           id="bottom"
           style={{ backgroundColor: 'green' }}
-          onClick={handleClick}
+          onClick={handleClick3}
         />
       </div>
     </div>
